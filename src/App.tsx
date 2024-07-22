@@ -88,16 +88,16 @@ const useCalendarState = ({
     const isIncludeSubRangeSelectedEndDate =
       subRange?.endDate && currentCursor.isSame(subRange.endDate, "date");
 
-    const isHovered = currentCursor.diff(hoveringDate, "day") === 0;
+    const isHovered = currentCursor.diff(hoveringDate, "date") === 0;
     const mainCellMode =
-      range?.startDate && currentCursor.isSame(range.startDate, "day")
+      range?.startDate && currentCursor.isSame(range.startDate, "date")
         ? "start"
-        : range?.endDate && currentCursor.isSame(range.endDate, "day")
+        : range?.endDate && currentCursor.isSame(range.endDate, "date")
         ? "end"
         : range?.startDate &&
           range?.endDate &&
-          currentCursor.isAfter(range.startDate, "day") &&
-          currentCursor.isBefore(range.endDate, "day")
+          currentCursor.isAfter(range.startDate, "date") &&
+          currentCursor.isBefore(range.endDate, "date")
         ? "range"
         : "none";
 
